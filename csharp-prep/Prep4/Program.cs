@@ -5,55 +5,35 @@ using System;
 //so declaration below isn't needed. 
 using System.Collections.Generic;
 using System.Globalization;
+using System.Numerics;
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Prep4 World!");
 
-        List<int> numbers = new List<int>{10,11,12};
-        numbers.Add(13);
-        numbers.Add(14);
-        numbers.Add(15);
-        Console.WriteLine(numbers[3]);
-        Console.WriteLine(numbers[4]);
-        Console.WriteLine(numbers[5]);
+       List<int> numbers = new List<int>();
 
-        List<string> words = new List<string>();
-        words.Add("hello");
-        words.Add("hola");
-        words.Add("anyong");
-        Console.WriteLine(words[0]);
-        Console.WriteLine(words[1]);
-        Console.WriteLine(words[2]);
+       for (int i=0; i < 8; i++)
+       {
+            Console.WriteLine("Enter a number:");
+            numbers.Add(int.Parse(Console.ReadLine()));  
+       }
 
-        List<string> wordsToGreet = new List<string>{"hi","bye","nice to meet you"};
-        Console.WriteLine(wordsToGreet[0]);
-        Console.WriteLine(wordsToGreet[1]);
-        Console.WriteLine(wordsToGreet[2]);
-
-        Console.WriteLine(wordsToGreet.Count());
-
-        foreach (string word in wordsToGreet)
-        {
-            Console.WriteLine(word);
-        }
+        int sum = 0;
 
         foreach (int number in numbers)
         {
-            Console.WriteLine(number);
+            sum += number; 
         }
 
+        Console.WriteLine($"The sum is: {sum}");
 
+        int average = sum / 8;
+        Console.WriteLine($"The average is:{average}");
 
+        int maxNumber = numbers.Max();
+        Console.WriteLine($"The largest number is: {maxNumber}");
 
-
-
-
-
-
-
-
-        
     }
 }
