@@ -30,7 +30,7 @@ class Program
         Console.WriteLine($"The sum is: {sum}");
 
         int average = sum / 8;
-        Console.WriteLine($"The average is:{average}");
+        Console.WriteLine($"The average is: {average}");
 
         int maxNumber = numbers.Max();
         Console.WriteLine($"The largest number is: {maxNumber}");
