@@ -27,6 +27,25 @@ class Program
             sum += number; 
         }
 
+        int smallestPos = int.MaxValue;
+
+        foreach (int number in numbers)
+        {
+            if (number > 0 && number < smallestPos)
+            {
+                smallestPos = number;
+            }
+        }
+
+        if (smallestPos == int.MaxValue)
+        {
+            Console.WriteLine("no postives were found");
+        }
+        else 
+        {
+            Console.WriteLine($"smallest positive number is: {smallestPos}");
+        }
+
         Console.WriteLine($"The sum is: {sum}");
 
         int average = sum / 8;
