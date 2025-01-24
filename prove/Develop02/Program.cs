@@ -24,8 +24,9 @@ class Program
             Console.WriteLine("4.Save");
             Console.WriteLine("5.Quit");
 
-            Console.Write("What would you like to do today? (select a number):\n");
+            Console.Write("What would you like to do today? (select a number):");
             int userResponse = int.Parse(Console.ReadLine());
+            Console.WriteLine("");
             return userResponse;
         };
         
@@ -44,20 +45,25 @@ class Program
                 entry._promptQuestion = prompt;
                 entry._response = response; 
                 string combinedEntry = entry.GetFromUser();
-                entry._combinedStrings.Add(combinedEntry);
+                journal._combinedStrings.Add(combinedEntry);
             } 
             else if (userResponse == 2)
             {
                 Console.WriteLine("");
-                entry.Display();
+                journal.Display();
             }
             else if (userResponse == 3)
             {
-
+                Console.WriteLine("Which file would you like load your journal entries from?");
+                journal._filename = Console.ReadLine();
+                Console.WriteLine("");
             }
             else if (userResponse == 4)
             {
-
+                Console.WriteLine("Which file would you like to save your journal entries to?");
+                journal._filename = Console.ReadLine();
+                journal.SaveToFile(journal._combinedStrings);
+                Console.WriteLine("");
             }
 
             userResponse = userInput(author);
