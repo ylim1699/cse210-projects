@@ -34,6 +34,7 @@ public class Journal
 
     public void LoadFromFile()
     {
+        _combinedStrings.Clear();
         string filename = _filename;
         string content = File.ReadAllText(filename);
         Console.WriteLine("");
