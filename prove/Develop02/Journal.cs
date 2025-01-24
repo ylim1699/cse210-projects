@@ -22,7 +22,7 @@ public class Journal
     {
         string filename = _filename;
 
-        using (StreamWriter outputFile = new StreamWriter(filename))
+        using (StreamWriter outputFile = new StreamWriter(filename, append: true))
         {
             foreach (string entry in _combinedStrings)
             {
