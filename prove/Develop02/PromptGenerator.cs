@@ -11,6 +11,7 @@ public class PromptGenerator
         "What do you think you could've done better today?",
         "Were you 1 percent better today?"
     };
+    
     public Random random = new Random();
 
     public string GetRandomPrompt()
