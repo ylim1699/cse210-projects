@@ -56,6 +56,7 @@ class Program
             {
                 Console.WriteLine("Which file would you like load your journal entries from?");
                 journal._filename = Console.ReadLine();
+                journal.LoadFromFile();
                 Console.WriteLine("");
             }
             else if (userResponse == 4)
