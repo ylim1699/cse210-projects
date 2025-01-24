@@ -39,6 +39,10 @@ public class Journal
         Console.WriteLine("");
         _combinedStrings.Add(content);
     }
-    // save
-    // load
+    
+
+    public void DeleteJournalEntries()
+    {
+        File.WriteAllText(_filename, string.Empty);
+    }
 }

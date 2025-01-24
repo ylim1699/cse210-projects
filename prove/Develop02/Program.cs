@@ -22,7 +22,8 @@ class Program
             Console.WriteLine("2.Display");
             Console.WriteLine("3.Load");
             Console.WriteLine("4.Save");
-            Console.WriteLine("5.Quit");
+            Console.WriteLine("5.Delete saved journal entries");
+            Console.WriteLine("6.Quit");
 
             Console.Write("What would you like to do? (select a number):");
             int userResponse = int.Parse(Console.ReadLine());
@@ -32,7 +33,7 @@ class Program
         
         int userResponse = userInput(author);
 
-        while (userResponse != 5)
+        while (userResponse != 6)
         {
 
             if (userResponse == 1)
@@ -66,7 +67,15 @@ class Program
                 journal.SaveToFile(journal._combinedStrings);
                 Console.WriteLine("");
             }
+            else if (userResponse == 5)
+            {
+                Console.WriteLine("Choose the file name of the journal entries you would like to empty:");
+                journal._filename = Console.ReadLine();
+                journal.DeleteJournalEntries();
+                Console.WriteLine("");
+            }
 
+            // After it goes through the while function, activates the function from the start again
             userResponse = userInput(author);
         };
         
