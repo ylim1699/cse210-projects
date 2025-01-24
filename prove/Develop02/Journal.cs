@@ -37,7 +37,7 @@ public class Journal
         string filename = _filename;
         string content = File.ReadAllText(filename);
         Console.WriteLine("");
-        Console.WriteLine(content);
+        _combinedStrings.Add(content);
     }
     // save
     // load

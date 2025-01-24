@@ -24,7 +24,7 @@ class Program
             Console.WriteLine("4.Save");
             Console.WriteLine("5.Quit");
 
-            Console.Write("What would you like to do today? (select a number):");
+            Console.Write("What would you like to do? (select a number):");
             int userResponse = int.Parse(Console.ReadLine());
             Console.WriteLine("");
             return userResponse;

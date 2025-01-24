@@ -7,7 +7,7 @@ public class PromptGenerator
     {
         "What was the most memorable thing today?",
         "What was your favorite part about today?",
-        "Describe your ideal day",
+        "Describe your day in 1 sentence",
         "What do you think you could've done better today?",
         "Were you 1 percent better today?"
     };
