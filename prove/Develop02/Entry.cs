@@ -9,7 +9,7 @@ public class Entry
     public string _response;
     public string GetFromUser()
     {
-        string combined = $"Journal- Date: {_date}, Name: {_author}, {_promptQuestion}: \n-{_response}.\n";
+        string combined = $"Journal- Date: {_date}, Name: {_author}, prompt: {_promptQuestion}: \n-{_response}\n";
        
         return combined;
     }

@@ -6,7 +6,6 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Journal 
 { 
-
     public string _filename;
     public List<string> _combinedStrings = new List<string>();
 
@@ -41,9 +40,13 @@ public class Journal
         _combinedStrings.Add(content);
     }
     
-
     public void DeleteJournalEntries()
     {
         File.WriteAllText(_filename, string.Empty);
+    } 
+
+    public void DeleteDisplay()
+    {
+        _combinedStrings.Clear();
     }
 }
