@@ -83,8 +83,5 @@ class Program
             // After it goes through the while function, activates the function from the start again
             userResponse = userInput(author);
         };
-        
-
-
     }
 }
