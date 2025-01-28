@@ -40,7 +40,6 @@ class Program
             if (userResponse == 1)
             {
                 string prompt = random.GetRandomPrompt();
-                
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
                 
