@@ -13,11 +13,5 @@ public class Entry
        
         return combined;
     }
-
-
-
-
-
 }
-    // store temporal
-    // display
+    
