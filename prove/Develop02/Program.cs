@@ -46,13 +46,13 @@ class Program
                 entry._promptQuestion = prompt;
                 entry._response = response; 
                 string combinedEntry = entry.GetFromUser();
-                journal._combinedStrings.Add(combinedEntry);
+                entry._combinedStrings.Add(combinedEntry);
                 Console.WriteLine("");
             } 
             else if (userResponse == 2)
             {
                 Console.WriteLine("");
-                journal.Display();
+                entry.Display();
             }
             else if (userResponse == 3)
             {
@@ -65,7 +65,7 @@ class Program
             {
                 Console.WriteLine("Which file would you like to save your journal entries to?");
                 journal._filename = Console.ReadLine();
-                journal.SaveToFile(journal._combinedStrings);
+                journal.SaveToFile(entry._combinedStrings);
                 Console.WriteLine("");
             }
             else if (userResponse == 5)
@@ -77,7 +77,7 @@ class Program
             }
             else if (userResponse == 6)
             {
-                journal.DeleteDisplay();
+                entry.DeleteDisplay();
             }
 
             // After it goes through the while function, activates the function from the start again

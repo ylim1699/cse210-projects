@@ -7,15 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 public class Journal 
 { 
     public string _filename;
-    public List<string> _combinedStrings = new List<string>();
-
-    public void Display()
-    {
-        foreach (string combinedEntry in _combinedStrings)
-        {
-            Console.WriteLine(combinedEntry);
-        }
-    }
+    Entry entry = new Entry();
 
     public void SaveToFile(List<string> _combinedStrings)
     {
@@ -30,23 +22,16 @@ public class Journal
             }
         }
     }
-
     public void LoadFromFile()
     {
-        _combinedStrings.Clear();
-        string filename = _filename;
-        string content = File.ReadAllText(filename);
+        entry._combinedStrings.Clear();
+        string content = File.ReadAllText(_filename);
+        entry._combinedStrings.Add(content);
         Console.WriteLine("");
-        _combinedStrings.Add(content);
     }
     
     public void DeleteJournalEntries()
     {
         File.WriteAllText(_filename, string.Empty);
     } 
-
-    public void DeleteDisplay()
-    {
-        _combinedStrings.Clear();
-    }
 }
