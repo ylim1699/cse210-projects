@@ -1,18 +1,19 @@
-using System.Net;
+using System.Net.Http.Headers;
 
 class Program
 {
     static void Main(string[] args)
     {
+        DateTime theCurrentTime = DateTime.Now;
+        string date = theCurrentTime.ToShortDateString();
+        
         // variables for each classes 
-        Entry entry = new Entry();
         Journal journal = new Journal();
         PromptGenerator random = new PromptGenerator();
         
         // find the author's full name and store it in entry.cs
         Console.Write("What is your full name?");
         string author = Console.ReadLine();
-        entry._author = author;
 
         int userInput(string author)
         {
@@ -22,13 +23,12 @@ class Program
             Console.WriteLine("2.Display");
             Console.WriteLine("3.Load");
             Console.WriteLine("4.Save");
-            Console.WriteLine("5.Delete (journal entries saved in txt file)");
-            Console.WriteLine("6.Delete (recorded entries in display)");
+            Console.WriteLine("5.Delete Display entries");
+            Console.WriteLine("6.Delete file entries");
             Console.WriteLine("7.Quit");
 
             Console.Write("What would you like to do? (select a number):");
             int userResponse = int.Parse(Console.ReadLine());
-            Console.WriteLine("");
             return userResponse;
         };
         
@@ -39,46 +39,46 @@ class Program
 
             if (userResponse == 1)
             {
+                Console.WriteLine("");
                 string prompt = random.GetRandomPrompt();
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
-                
-                entry._promptQuestion = prompt;
-                entry._response = response; 
-                string combinedEntry = entry.GetFromUser();
-                entry._combinedStrings.Add(combinedEntry);
+                Entry newEntry = new Entry(date, author, prompt, response);
+                journal.AddList(newEntry);
+
                 Console.WriteLine("");
             } 
             else if (userResponse == 2)
             {
+                journal.DisplayAll();
                 Console.WriteLine("");
-                entry.Display();
             }
             else if (userResponse == 3)
             {
-                Console.WriteLine("Which file would you like load your journal entries from?");
+                Console.WriteLine("Which file would you like to load from?:");
                 journal._filename = Console.ReadLine();
                 journal.LoadFromFile();
                 Console.WriteLine("");
             }
             else if (userResponse == 4)
             {
-                Console.WriteLine("Which file would you like to save your journal entries to?");
+                Console.Write("Which file would you like to save it to?:");
                 journal._filename = Console.ReadLine();
-                journal.SaveToFile(entry._combinedStrings);
+                journal.SaveToFile(journal._entries);
                 Console.WriteLine("");
-            }
-            else if (userResponse == 5)
+            }    
+            else if (userResponse == 5)  
             {
-                Console.WriteLine("Choose the file name of the journal entries you would like to empty:");
+                journal._entries.Clear();
+                journal._savedEntries ="";
+                Console.WriteLine("");
+            }   
+            else if (userResponse == 6) 
+            {
+                Console.WriteLine("Which file would you like to delete the entries:");
                 journal._filename = Console.ReadLine();
-                journal.DeleteJournalEntries();
-                Console.WriteLine("");
-            }
-            else if (userResponse == 6)
-            {
-                entry.DeleteDisplay();
-            }
+                journal.DeleteFileEntries();
+            } 
 
             // After it goes through the while function, activates the function from the start again
             userResponse = userInput(author);
