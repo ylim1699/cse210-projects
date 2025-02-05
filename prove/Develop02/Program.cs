@@ -43,15 +43,19 @@ class Program
                 string prompt = random.GetRandomPrompt();
                 Console.WriteLine(prompt);
                 string response = Console.ReadLine();
-                Entry newEntry = new Entry(date, author, prompt, response);
+                Entry newEntry = new Entry();
+                newEntry._date = date;
+                newEntry._author = author;
+                newEntry._promptQuestion = prompt;
+                newEntry._response = response;
                 journal.AddList(newEntry);
 
                 Console.WriteLine("");
             } 
             else if (userResponse == 2)
             {
-                journal.DisplayAll();
                 Console.WriteLine("");
+                journal.DisplayAll();
             }
             else if (userResponse == 3)
             {
@@ -70,7 +74,6 @@ class Program
             else if (userResponse == 5)  
             {
                 journal._entries.Clear();
-                journal._savedEntries ="";
                 Console.WriteLine("");
             }   
             else if (userResponse == 6) 

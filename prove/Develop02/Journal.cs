@@ -2,7 +2,6 @@ public class Journal
 {
     public List<Entry> _entries = new List<Entry>();
     public string _filename;
-    public string _savedEntries;
 
     public void AddList(Entry entry)
     {
@@ -11,7 +10,6 @@ public class Journal
 
     public void DisplayAll()
     {
-        Console.WriteLine(_savedEntries);
         foreach (Entry entry in _entries)
         {
              entry.Display();
@@ -23,13 +21,11 @@ public class Journal
         Console.WriteLine("Saving to file...");
         string filename = _filename;
 
-        using (StreamWriter outputFile = new StreamWriter(filename, append: true))
+        using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            outputFile.WriteLine(_savedEntries);
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"Date:{entry._date}\nAuthor:{entry._author}");
-                outputFile.WriteLine($"PromptQuestion:{entry._promptQuestion}\n- {entry._response}\n");
+                outputFile.WriteLine($"{entry._date},{entry._author},{entry._promptQuestion},{entry._response}");
             }
         }
     }
@@ -37,9 +33,18 @@ public class Journal
     public void LoadFromFile()
     {
         _entries.Clear();
-        _savedEntries="";
-        string content = File.ReadAllText(_filename);
-        _savedEntries += content;   
+        string[] savedEntries = System.IO.File.ReadAllLines(_filename);
+
+        foreach (string entry in savedEntries)
+        {
+            string[] parts = entry.Split(',');
+            Entry newEntry = new Entry();
+            newEntry._date = parts[0];
+            newEntry._author = parts[1];
+            newEntry._promptQuestion = parts[2];
+            newEntry._response = parts[3];
+            _entries.Add(newEntry);
+        }
     }
 
     public void DeleteFileEntries()
@@ -52,3 +57,5 @@ public class Journal
         Console.WriteLine("");
     }
 }
+
+                
