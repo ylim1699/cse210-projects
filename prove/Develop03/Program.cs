@@ -8,7 +8,7 @@ class Program
         randomScripture.LoadFromFile();
         Scripture scripture = new Scripture(randomScripture.GetRandomPrompt());
         
-        Console.WriteLine($"Here is your given scripture: {scripture.Display()}");
+        Console.WriteLine($"Here's the given scripture: {scripture.Display()}");
         Console.WriteLine("");
         Console.WriteLine("Press enter to start playing scripture memorizer");
         Console.WriteLine("If you type quit, you can exit out of the program");

@@ -14,7 +14,7 @@ public class Reference
         _endVerse = null;
     }
 
-    public Reference(string book, int chapter, int startVerse, string verseText) // new constructor for 1 verse using scriptureGenerator
+    public Reference(string book, int chapter, int startVerse, string verseText) //constructor for 1 verse using scriptureGenerator
     {
         _book = book;
         _chapter = chapter;
@@ -22,7 +22,7 @@ public class Reference
         _endVerse = null;
         _verseText = verseText;
     }
-    public Reference(string book, int chapter, int startVerse, int endVerse, string verseText)
+    public Reference(string book, int chapter, int startVerse, int endVerse, string verseText) //constructor for 2 verses using scriptureGenerator
     {
         _book = book;
         _chapter = chapter;

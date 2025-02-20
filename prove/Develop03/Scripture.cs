@@ -26,6 +26,10 @@ public class Scripture
             int index = _random.Next(visibleWords.Count);
             var wordToHide = visibleWords[index];
             wordToHide.Hide();
+
+            var wordInOriginalList = _words.First(w => w == wordToHide);
+            wordInOriginalList.Hide(); // question
+            
             visibleWords.RemoveAt(index);
         }
     }
@@ -43,8 +47,19 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {   
-        return _words.All(w => w.IsHidden() == true); //goes thorugh _words list and returns true if all the instances of w._isHidden of those elements are true
+        return _words.All(w => w.IsHidden() == true); //goes thorugh _words list and returns true if all the varialbe w._isHidden in each instances are true
     }
+
+    // public bool IsCompletelyHidden()
+    // {
+    // foreach (Word word in _words)
+    // {
+    //     if (word._isHidden == true)
+    //     {
+    //         return true;
+    //     }
+    // }
+    // }
 
 //================================================================================================================================//
 
