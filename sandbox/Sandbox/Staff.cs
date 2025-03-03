@@ -1,8 +1,8 @@
 public class Staff {
 
-    protected string _firstName;
-    protected string _lastName;
-    protected string _gender;
+    private string _firstName;
+    private string _lastName;
+    private string _gender;
 
     public Staff(string firstName, string lastName, string gender)
     {
