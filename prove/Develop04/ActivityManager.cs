@@ -5,19 +5,21 @@ public class ActivityManager {
     BreathingActivity breathing = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
     ReflectingActivity reflecting = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilienc. This will help you recognize the power you have and how you can use it in other aspects of your life.");
     ListingActivity listing = new ListingActivity("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-    
+    ScreamingActivity screaming = new ScreamingActivity("Screaming Activity", "This activity will help you release stress and other negative emotions by helping you vent and scream out loud.");
     private int _breathingLog = 0;
     private int _reflectingLog = 0;
     private int _listingLog = 0;
+    private int _screamingLog = 0;
     
     public void Menu()
     {
         Console.WriteLine("Menu Options:");
         Console.WriteLine("1. Start breathing activity");
         Console.WriteLine("2. Start reflecting activity");
-        Console.WriteLine("3. start listing activity");
-        Console.WriteLine("4. Show me how many times I did each activity");
-        Console.WriteLine("5. quit");
+        Console.WriteLine("3. Start listing activity");
+        Console.WriteLine("4. Start Screaming Activit");
+        Console.WriteLine("5. Show me how many times I did each activity");
+        Console.WriteLine("6. quit");
         Console.WriteLine("Select a number from the menu:");
     }
 
@@ -26,7 +28,7 @@ public class ActivityManager {
         Menu();
         int userInput = int.Parse(Console.ReadLine());
 
-          while (userInput != 5)
+          while (userInput != 6)
         {
             if (userInput == 1)
             {
@@ -58,9 +60,19 @@ public class ActivityManager {
             else if (userInput == 4)
             {
                 Console.WriteLine("");
-                Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} time.");
-                Console.WriteLine($"You participated in the Reflecting Activity {_reflectingLog} time.");
-                Console.WriteLine($"You participated in the Listing Activity {_listingLog} time.");
+                screaming.StartMessage();
+                screaming.Run();
+                screaming.EndMessage();
+                Console.WriteLine("");
+                _screamingLog ++;
+            }
+            else if (userInput == 5)
+            {
+                Console.WriteLine("");
+                Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} times.");
+                Console.WriteLine($"You participated in the Reflecting Activity {_reflectingLog} times.");
+                Console.WriteLine($"You participated in the Listing Activity {_listingLog} times.");
+                Console.WriteLine($"You participated in the Screaming Activity {_screamingLog} times.");
                 Console.WriteLine("");  
             }
             else {
