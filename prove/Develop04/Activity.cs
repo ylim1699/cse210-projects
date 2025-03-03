@@ -29,6 +29,17 @@ public class Activity {
         }
     }
 
+    public void ShowCountdown(int s)
+    {
+        Console.WriteLine("you may begin in:");
+        for (int i = s; i > 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+    }
+
     public void SetTime()
     {
         Console.WriteLine("How long in seconds, would you like for your session?");
@@ -60,16 +71,5 @@ public class Activity {
     public int GetTime()
     {
         return _time;
-    }
-
-    public void ShowCountdown(int s)
-    {
-        Console.WriteLine("you may begin in:");
-        for (int i = s; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
     }
 }
