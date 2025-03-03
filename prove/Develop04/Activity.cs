@@ -10,7 +10,7 @@ public class Activity {
         _description = description;
     }
 
-    public void LoadAnimation(int s)
+    public void LoadAnimation(int s) //2 seconds of loading per 1 value of s.
     {
         for (int i = s; i > 0; i--)
         {
@@ -29,7 +29,7 @@ public class Activity {
         }
     }
 
-    public void ShowCountdown(int s)
+    public void ShowCountdown(int s) // s = amount of countdown in seconds.
     {
         Console.WriteLine("you may begin in:");
         for (int i = s; i > 0; i--)
