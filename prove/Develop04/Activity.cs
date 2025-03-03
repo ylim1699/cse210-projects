@@ -4,9 +4,6 @@ public class Activity {
     private string _description;
     protected Random random = new Random();
 
-    public Activity()
-    {}
-    
     public Activity(string activityName, string description)
     {
         _activityName = activityName;
@@ -31,6 +28,7 @@ public class Activity {
             Console.Write("\b \b") ;
         }
     }
+
     public void SetTime()
     {
         Console.WriteLine("How long in seconds, would you like for your session?");
@@ -63,6 +61,7 @@ public class Activity {
     {
         return _time;
     }
+
     public void ShowCountdown(int s)
     {
         Console.WriteLine("you may begin in:");

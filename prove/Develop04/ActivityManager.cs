@@ -9,6 +9,7 @@ public class ActivityManager {
     private int _breathingLog = 0;
     private int _reflectingLog = 0;
     private int _listingLog = 0;
+    
     public void Menu()
     {
         Console.WriteLine("Menu Options:");

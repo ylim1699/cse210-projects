@@ -3,6 +3,7 @@ using System.Security.Cryptography.X509Certificates;
 public class BreathingActivity : Activity {
     public BreathingActivity(string activityName, string description) : base(activityName, description)
     {}
+    
     public void run()
     {
         Console.WriteLine("");

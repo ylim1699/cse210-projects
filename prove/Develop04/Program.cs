@@ -10,6 +10,4 @@ class Program
     }
 }
        
-       
-// 
 // https://wirefr1ame.cc/uFgsH3

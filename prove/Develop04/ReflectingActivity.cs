@@ -1,4 +1,6 @@
 public class ReflectingActivity : Activity {
+    public ReflectingActivity(string activityName, string description) : base(activityName, description)
+    {}
 
     private List<string> _startPrompts = new List<string>
     {
@@ -20,6 +22,7 @@ public class ReflectingActivity : Activity {
        "What did you learn about yourself through this experience?",
        "How can you keep this experience in mind in the future?"
     };
+
     public string GetStartPrompt()
     {
         int index = random.Next(_startPrompts.Count);
@@ -38,6 +41,7 @@ public class ReflectingActivity : Activity {
         string userInput = Console.ReadLine();
         if (string.IsNullOrEmpty(userInput)) return;
     }
+
     public void run()
     {
         Console.WriteLine("");
@@ -57,7 +61,4 @@ public class ReflectingActivity : Activity {
         }
         Console.WriteLine("");
     }
-
-    public ReflectingActivity(string activityName, string description) : base(activityName, description)
-    {}
 }

@@ -2,6 +2,8 @@ using System.ComponentModel;
 using System.Dynamic;
 
 public class ListingActivity : Activity {
+    public ListingActivity(string activityName, string description) : base(activityName, description)
+    {}
 
     private List<string> _prompts = new List<string> 
     {
@@ -19,6 +21,7 @@ public class ListingActivity : Activity {
         int index = random.Next(_prompts.Count);
         return _prompts[index];
     }
+
     public void run()
     {
        Console.WriteLine("Write as many responses to the following prompt:");
@@ -36,6 +39,4 @@ public class ListingActivity : Activity {
        Console.WriteLine($"You listed {_answer.Count} items!");
     }
 
-    public ListingActivity(string activityName, string description) : base(activityName, description)
-    {}
 }
