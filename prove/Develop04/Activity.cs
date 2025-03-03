@@ -29,7 +29,7 @@ public class Activity {
         }
     }
 
-    public void ShowCountdown(int s) // s = amount of countdown in seconds.
+    public void ShowCountdown(int s) //s = amount of countdown in seconds.
     {
         Console.WriteLine("you may begin in:");
         for (int i = s; i > 0; i--)
