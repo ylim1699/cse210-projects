@@ -56,7 +56,8 @@ public class ReflectingActivity : Activity {
  
         while (DateTime.Now < duration)
         {
-            Console.Write(GetAskPrompt());
+            Console.WriteLine("");
+            Console.WriteLine(GetAskPrompt());
             LoadAnimation(5);
         }
         Console.WriteLine("");

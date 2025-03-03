@@ -43,8 +43,18 @@ public class Activity {
     public void SetTime()
     {
         Console.WriteLine("How long in seconds, would you like for your session?");
-        int time = int.Parse(Console.ReadLine());
-        _time = time;
+        string time = (Console.ReadLine());
+
+        if (int.TryParse(time, out int number)) // checks to see if the first argument in the parameter of int.TryParse is int, and if it is, it out(outputs) a new variable called number as int
+        {
+            _time = number;
+        }
+        else 
+        {
+            Console.WriteLine("");
+            Console.WriteLine("!!---You did not enter a nubmer. Try again---!!");
+            SetTime();
+        }
     }
 
     public void StartMessage()
