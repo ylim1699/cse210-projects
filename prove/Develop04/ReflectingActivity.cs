@@ -42,7 +42,7 @@ public class ReflectingActivity : Activity {
         if (string.IsNullOrEmpty(userInput)) return;
     }
 
-    public void run()
+    public void Run()
     {
         Console.WriteLine("");
         Console.WriteLine("Consider the following pompt:");

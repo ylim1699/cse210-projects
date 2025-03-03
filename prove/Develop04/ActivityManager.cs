@@ -32,7 +32,7 @@ public class ActivityManager {
             {
                 Console.WriteLine("");
                 breathing.StartMessage();
-                breathing.run();
+                breathing.Run();
                 breathing.EndMessage();
                 Console.WriteLine("");
                 _breathingLog ++;
@@ -41,7 +41,7 @@ public class ActivityManager {
             {
                 Console.WriteLine("");
                 reflecting.StartMessage();
-                reflecting.run();
+                reflecting.Run();
                 reflecting.EndMessage();
                 Console.WriteLine("");
                 _reflectingLog ++;
@@ -50,19 +50,18 @@ public class ActivityManager {
             {
                 Console.WriteLine("");
                 listing.StartMessage();
-                listing.run();
+                listing.Run();
                 listing.EndMessage();
                 Console.WriteLine("");
                 _listingLog ++;
             }
             else if (userInput == 4)
             {
-
                 Console.WriteLine("");
-                Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} times.");
-                Console.WriteLine($"You participated in the Reflecting Activity {_reflectingLog} times.");
-                Console.WriteLine($"You participated in the Listing Activity {_listingLog} times.");
-                Console.WriteLine("");
+                Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} time.");
+                Console.WriteLine($"You participated in the Reflecting Activity {_reflectingLog} time.");
+                Console.WriteLine($"You participated in the Listing Activity {_listingLog} time.");
+                Console.WriteLine("");  
             }
             else {
                 Console.WriteLine("you did not enter a number listed in the menu, try again");

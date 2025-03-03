@@ -4,7 +4,7 @@ public class BreathingActivity : Activity {
     public BreathingActivity(string activityName, string description) : base(activityName, description)
     {}
     
-    public void run()
+    public void Run()
     {
         Console.WriteLine("");
         Console.WriteLine("");

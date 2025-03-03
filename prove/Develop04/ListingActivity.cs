@@ -22,7 +22,7 @@ public class ListingActivity : Activity {
         return _prompts[index];
     }
 
-    public void run()
+    public void Run()
     {
        Console.WriteLine("Write as many responses to the following prompt:");
        Console.WriteLine(GetPrompt());
