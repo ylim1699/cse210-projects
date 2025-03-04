@@ -33,6 +33,7 @@ public class ListingActivity : Activity {
 
        while (DateTime.Now < duration)
        {
+        Console.Write(">");
         string answer = Console.ReadLine();
         _answer.Add(answer);
        }
