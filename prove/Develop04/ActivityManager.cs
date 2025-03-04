@@ -6,11 +6,7 @@ public class ActivityManager {
     ReflectingActivity reflecting = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilienc. This will help you recognize the power you have and how you can use it in other aspects of your life.");
     ListingActivity listing = new ListingActivity("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
     ScreamingActivity screaming = new ScreamingActivity("Screaming Activity", "This activity will help you release stress and other negative emotions by helping you vent by screaming out loud.");
-    private int _breathingLog = 0;
-    private int _reflectingLog = 0;
-    private int _listingLog = 0;
-    private int _screamingLog = 0;
-    
+
     public void Menu()
     {
         Console.WriteLine("Menu Options:");
@@ -38,7 +34,6 @@ public class ActivityManager {
                 breathing.Run();
                 breathing.EndMessage();
                 Console.WriteLine("");
-                _breathingLog ++;
             }
             else if (userInput == "2")
             {
@@ -47,7 +42,6 @@ public class ActivityManager {
                 reflecting.Run();
                 reflecting.EndMessage();
                 Console.WriteLine("");
-                _reflectingLog ++;
             }
             else if (userInput == "3")
             {
@@ -56,7 +50,6 @@ public class ActivityManager {
                 listing.Run();
                 listing.EndMessage();
                 Console.WriteLine("");
-                _listingLog ++;
             }
             else if (userInput == "4")
             {
@@ -65,15 +58,14 @@ public class ActivityManager {
                 screaming.Run();
                 screaming.EndMessage();
                 Console.WriteLine("");
-                _screamingLog ++;
             }
             else if (userInput == "5")
             {
                 Console.WriteLine("");
-                Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} times.");
-                Console.WriteLine($"You participated in the Reflecting Activity {_reflectingLog} times.");
-                Console.WriteLine($"You participated in the Listing Activity {_listingLog} times.");
-                Console.WriteLine($"You participated in the Screaming Activity {_screamingLog} times.");
+                Console.WriteLine($"You participated in the Breathing Activity {breathing.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Reflecting Activity {reflecting.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Listing Activity {listing.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Screaming Activity {screaming.GetTimesRun()} times.");
                 Console.WriteLine("");  
             }
             else if (userInput == "6")

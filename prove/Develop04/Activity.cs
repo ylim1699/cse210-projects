@@ -2,6 +2,7 @@ public class Activity {
     private int _time;
     private string _activityName;
     private string _description;
+    protected int _timesRun = 0;
     protected Random random = new Random();
 
     public Activity(string activityName, string description)
@@ -10,6 +11,11 @@ public class Activity {
         _description = description;
     }
 
+    public int GetTimesRun()
+    {
+        return _timesRun;
+    }
+    
     public void LoadAnimation(int s) //2 seconds of loading per 1 value of s.
     {
         for (int i = s; i > 0; i--)

@@ -61,5 +61,6 @@ public class ReflectingActivity : Activity {
             LoadAnimation(5);
         }
         Console.WriteLine("");
+        _timesRun++;
     }
 }

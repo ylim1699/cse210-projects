@@ -38,6 +38,7 @@ public class ListingActivity : Activity {
         _answer.Add(answer);
        }
        Console.WriteLine($"You listed {_answer.Count} items!");
+        _timesRun++;
     }
 
 }

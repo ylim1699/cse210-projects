@@ -35,5 +35,6 @@ public class BreathingActivity : Activity {
             Console.WriteLine("");
             Console.WriteLine("");
         }
+        _timesRun++;
     }
 }

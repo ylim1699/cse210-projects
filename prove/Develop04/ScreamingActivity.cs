@@ -36,5 +36,6 @@ public class ScreamingActivity : Activity {
             Console.WriteLine("");
             Console.WriteLine("");
         }
+        _timesRun++;
     }
 }
