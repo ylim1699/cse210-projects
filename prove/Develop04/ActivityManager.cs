@@ -25,12 +25,13 @@ public class ActivityManager {
 
     public void ShowMenu()
     {
-        Menu();
-        int userInput = int.Parse(Console.ReadLine());
-
-          while (userInput != 6)
+        string userInput = "";
+        while (userInput != "6")
         {
-            if (userInput == 1)
+            Menu();
+            userInput = Console.ReadLine();
+
+            if (userInput == "1")
             {
                 Console.WriteLine("");
                 breathing.StartMessage();
@@ -39,7 +40,7 @@ public class ActivityManager {
                 Console.WriteLine("");
                 _breathingLog ++;
             }
-            else if (userInput == 2)
+            else if (userInput == "2")
             {
                 Console.WriteLine("");
                 reflecting.StartMessage();
@@ -48,7 +49,7 @@ public class ActivityManager {
                 Console.WriteLine("");
                 _reflectingLog ++;
             }
-            else if (userInput == 3)
+            else if (userInput == "3")
             {
                 Console.WriteLine("");
                 listing.StartMessage();
@@ -57,7 +58,7 @@ public class ActivityManager {
                 Console.WriteLine("");
                 _listingLog ++;
             }
-            else if (userInput == 4)
+            else if (userInput == "4")
             {
                 Console.WriteLine("");
                 screaming.StartMessage();
@@ -66,7 +67,7 @@ public class ActivityManager {
                 Console.WriteLine("");
                 _screamingLog ++;
             }
-            else if (userInput == 5)
+            else if (userInput == "5")
             {
                 Console.WriteLine("");
                 Console.WriteLine($"You participated in the Breathing Activity {_breathingLog} times.");
@@ -75,11 +76,14 @@ public class ActivityManager {
                 Console.WriteLine($"You participated in the Screaming Activity {_screamingLog} times.");
                 Console.WriteLine("");  
             }
+            else if (userInput == "6")
+            {
+                Console.WriteLine("See you next time!");
+            }
             else {
-                Console.WriteLine("you did not enter a number listed in the menu, try again");
+                Console.WriteLine("!!---you did not enter a number listed in the menu, try again---!!");
+                Console.WriteLine("");
             } 
-            ShowMenu();
-            break;
         }
     }
 }

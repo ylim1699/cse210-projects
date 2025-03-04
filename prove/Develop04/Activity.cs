@@ -45,7 +45,7 @@ public class Activity {
         Console.WriteLine("How long in seconds, would you like for your session?");
         string time = (Console.ReadLine());
 
-        if (int.TryParse(time, out int number)) // checks to see if the first argument in the parameter of int.TryParse is int, and if it is, it out(outputs) a new variable called number as int
+        if (int.TryParse(time, out int number)) // checks to see if the first argument in the parameter of int.TryParse could be an int type, and if it is, it out(outputs) a new variable called number as int
         {
             _time = number;
         }

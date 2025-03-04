@@ -39,7 +39,7 @@ public class ReflectingActivity : Activity {
     {
         Console.WriteLine("If you have something in mind, press enter to continue.");
         string userInput = Console.ReadLine();
-        if (string.IsNullOrEmpty(userInput)) return;
+        if (string.IsNullOrEmpty(userInput)) return; //if enter is pressed, it exits out of the function
     }
 
     public void Run()
