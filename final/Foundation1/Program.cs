@@ -13,7 +13,6 @@ class Program
         videos.Add(video1);
         videos.Add(video2);
         videos.Add(video3);
-        
 
         Comment v1comment1 = new Comment("John", "That looks delicious!");
         Comment v1comment2 = new Comment("James", "I wish that was me eating that!");

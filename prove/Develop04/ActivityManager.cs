@@ -2,10 +2,10 @@ using System.ComponentModel.Design;
 
 public class ActivityManager {
 
-    BreathingActivity breathing = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
-    ReflectingActivity reflecting = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilienc. This will help you recognize the power you have and how you can use it in other aspects of your life.");
-    ListingActivity listing = new ListingActivity("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
-    ScreamingActivity screaming = new ScreamingActivity("Screaming Activity", "This activity will help you release stress and other negative emotions by helping you vent by screaming out loud.");
+    private BreathingActivity _breathing = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.");
+    private ReflectingActivity _reflecting = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilienc. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+    private ListingActivity _listing = new ListingActivity("Listing Activity","This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+    private ScreamingActivity _screaming = new ScreamingActivity("Screaming Activity", "This activity will help you release stress and other negative emotions by helping you vent by screaming out loud.");
 
     public void Menu()
     {
@@ -30,42 +30,42 @@ public class ActivityManager {
             if (userInput == "1")
             {
                 Console.WriteLine("");
-                breathing.StartMessage();
-                breathing.Run();
-                breathing.EndMessage();
+                _breathing.StartMessage();
+                _breathing.Run();
+                _breathing.EndMessage();
                 Console.WriteLine("");
             }
             else if (userInput == "2")
             {
                 Console.WriteLine("");
-                reflecting.StartMessage();
-                reflecting.Run();
-                reflecting.EndMessage();
+                _reflecting.StartMessage();
+                _reflecting.Run();
+                _reflecting.EndMessage();
                 Console.WriteLine("");
             }
             else if (userInput == "3")
             {
                 Console.WriteLine("");
-                listing.StartMessage();
-                listing.Run();
-                listing.EndMessage();
+                _listing.StartMessage();
+                _listing.Run();
+                _listing.EndMessage();
                 Console.WriteLine("");
             }
             else if (userInput == "4")
             {
                 Console.WriteLine("");
-                screaming.StartMessage();
-                screaming.Run();
-                screaming.EndMessage();
+                _screaming.StartMessage();
+                _screaming.Run();
+                _screaming.EndMessage();
                 Console.WriteLine("");
             }
             else if (userInput == "5")
             {
                 Console.WriteLine("");
-                Console.WriteLine($"You participated in the Breathing Activity {breathing.GetTimesRun()} times.");
-                Console.WriteLine($"You participated in the Reflecting Activity {reflecting.GetTimesRun()} times.");
-                Console.WriteLine($"You participated in the Listing Activity {listing.GetTimesRun()} times.");
-                Console.WriteLine($"You participated in the Screaming Activity {screaming.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Breathing Activity {_breathing.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Reflecting Activity {_reflecting.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Listing Activity {_listing.GetTimesRun()} times.");
+                Console.WriteLine($"You participated in the Screaming Activity {_screaming.GetTimesRun()} times.");
                 Console.WriteLine("");  
             }
             else if (userInput == "6")
