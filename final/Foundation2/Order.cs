@@ -4,6 +4,12 @@ public class Order {
     List<Product> _products = new List<Product>();
     List<Customer> _customers = new List<Customer>();
 
+    public Order (List<Product> products, List<Customer> customer)
+    {
+        _products = products;
+        _customers = customer;
+    }
+
     public float GetTotalCost()
     {
         float productCost = 0;
