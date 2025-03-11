@@ -1,10 +1,10 @@
 public class Product {
     private string _productName;
     private int _productID;
-    private int _pricePerUnit;
+    private double _pricePerUnit;
     private int _quantity;
-
-    public Product (string productName, int productID, int pricePerUnit, int quantity)
+    
+    public Product (string productName, int productID, double pricePerUnit, int quantity)
     {
         _productName = productName;
         _productID = productID;
@@ -12,9 +12,19 @@ public class Product {
         _quantity = quantity;
     }
 
-    public float GetTotalCost()
+    public double GetTotalCost()
     {
         return _pricePerUnit * _quantity;
+    }
+
+    public int GetID()
+    {
+        return _productID;
+    }
+
+    public string GetName()
+    {
+        return _productName;
     }
 
 // Contains the name, product id, price per unit, and quantity of each product.

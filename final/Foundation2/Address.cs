@@ -29,9 +29,9 @@ public class Address {
         }
     }
 
-    public void GetAddress()
+    public string GetAddress()
     {
-        Console.WriteLine($"Address || street: {_streetAddress}, city: {_city}, State: {_state}, Country: {_country}.");
+        return $"Address || street: {_streetAddress}, city: {_city}, State: {_state}, Country: {_country}.";
     }
 }
 // The address contains a string for the street address, the city, state/province, and country.

@@ -10,9 +10,9 @@ public class Order {
         _customers = customer;
     }
 
-    public float GetTotalCost()
+    public double GetTotalCost()
     {
-        float productCost = 0;
+        double productCost = 0;
         foreach (Customer customer in _customers)
         {
             bool countryOrigin = customer.IsUsa();
@@ -20,7 +20,7 @@ public class Order {
             {
                 foreach (Product product in _products)
                 {
-                    float costOfEachProduct = product.GetTotalCost();
+                    double costOfEachProduct = product.GetTotalCost();
                     productCost += costOfEachProduct;
                 }
                 productCost+=5;
@@ -29,7 +29,7 @@ public class Order {
             {
                 foreach (Product product in _products)
                 {
-                    float costOfEachProduct = product.GetTotalCost();
+                    double costOfEachProduct = product.GetTotalCost();
                     productCost += costOfEachProduct;
                 }
                 productCost+=35;
@@ -38,14 +38,24 @@ public class Order {
         return productCost;
     }
 
-    public string PackingLabel()
+    public void PackingLabel()
     {
-        return
+        foreach (Product product in _products)
+        {
+            Console.WriteLine($"Product Name: {product.GetName()}");
+            Console.WriteLine($"Product ID: {product.GetID()}");
+            Console.WriteLine("");
+        }
     }
 
-    public string Shippinglabel()
+    public void Shippinglabel()
     {
-        return 
+        foreach (Customer customer in _customers)
+        {
+            Console.WriteLine($"Customer Name: {customer.GetName()}");
+            customer.GetAddress();
+            Console.WriteLine("");
+        } 
     }
 }
 
