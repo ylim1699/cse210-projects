@@ -20,4 +20,7 @@ public class Shape {
     {
         return -1;
     }
+
+    // // abstract version:
+    // public abstract double GetArea();
 }
