@@ -7,17 +7,17 @@ public class Cycling : Activity {
 
     public override double GetDistance()
     {
-        return Math.Round((_speed / 60) * _length, 2);
+        return Math.Round((_speed / 60) * _length, 1);
     }
 
     public override double GetSpeed()
     {
-        return Math.Round(_speed, 2);
+        return Math.Round(_speed, 1);
     }
     
     public override double GetPace()
     {
-        return Math.Round(_length / GetDistance(), 2);
+        return Math.Round(_length / GetDistance(), 1);
     }
 
 // The distance = (_speed / 60) * _length

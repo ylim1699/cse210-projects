@@ -8,17 +8,17 @@ public class Running : Activity {
 
       public override double GetDistance()
     {
-        return Math.Round(_distance, 2);
+        return Math.Round(_distance, 1);
     }
 
     public override double GetSpeed()
     {
-        return Math.Round((_distance / _length) * 60, 2);
+        return Math.Round((_distance / _length) * 60, 1);
     }
     
     public override double GetPace()
     {
-        return Math.Round(_length / _distance, 2);
+        return Math.Round(_length / _distance, 1);
     }
 
 // The distance = _distance

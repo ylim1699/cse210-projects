@@ -7,17 +7,17 @@ public class Swimming : Activity {
 
     public override double GetDistance()
     {
-        return Math.Round(_laps * 50 / 1000, 2);
+        return Math.Round(_laps * 50 / 1000, 1);
     }
 
     public override double GetSpeed()
     {
-        return Math.Round(GetDistance() / _length, 2);
+        return Math.Round(GetDistance() / _length, 1);
     }
     
     public override double GetPace()
     {
-        return Math.Round(_length / GetDistance(), 2);
+        return Math.Round(_length / GetDistance(), 1);
     }
 
 // The distance = _laps * 50 / 1000
